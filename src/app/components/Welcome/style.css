@@ -1,0 +1,136 @@
+.welcome_wrapper {
+    width: 100%;
+
+    background-color: #f7f7f7;
+}
+
+.welcome {
+    width: 80%;
+    background-color: white;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    line-height: 1.5;
+    font-family: inherit;
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: 4fr 3fr;
+
+}
+
+.welcome h1 {
+    font-size: 3rem;
+    color: var(--darkTeal);
+    margin-bottom: .5rem;
+}
+
+.welcome p {
+    margin-bottom: 1rem;
+    color: #565454;
+    font-size: 1.5rem;
+}
+
+.welcome button {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1rem;
+    border: none;
+    background: var(--darkTeal);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+
+
+.welcome_bg {
+    background-image: url('../../../../public/flag.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.dropdown {
+    border: 1px solid #f7f7f7;
+
+}
+
+.dropdown_header {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+    padding: 1rem;
+    color: #333;
+    cursor: pointer;
+
+}
+
+.dropdown_header h4 
+{
+    color: var(--darkTeal)
+}
+
+.dropdown p {
+    transition: all .5s ease-in-out;
+    font-size: 1rem;
+
+}
+
+.dropdown p.drop_content_empty {
+
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+
+}
+
+.dropdown p.drop_content {
+
+    opacity: 1;
+    padding: 0 1rem;
+    height: 100px;
+    font-size: 1rem;
+}
+
+
+/* Media queireis */
+
+@media (max-width: 900px) {
+
+    .welcome {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+
+    .welcome_bg {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .welcome {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+
+    }
+
+    .welcome h1 {
+        font-size: 2rem;
+        margin-bottom: 0;
+
+    }
+
+    .welcome p {
+        font-size: 1.2rem;
+    }
+
+}

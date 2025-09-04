@@ -1,0 +1,97 @@
+.showcase {
+    position: relative;
+    height: 70vh;
+    width: 100vw;
+    background-image: url('../../../../public/showcase.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -5;
+   
+
+}
+
+
+
+.showcase section {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+
+    margin: auto;
+    display: grid;
+    place-items: center;
+    place-content: center;
+
+}
+
+.showcase_content  h1 {
+   
+    font-size: 50px;
+    margin: auto;
+    margin-bottom: 1rem;
+    text-align: center;
+    
+}
+
+.showcase_content .btn {
+
+    border: 1px solid #ccc;
+    
+    text-align: center;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    color: #ccc;
+    width: 100%;
+    
+   
+}
+
+.showcase section .btn:hover {
+    cursor: pointer;
+}
+
+.showcase_content 
+{
+    width: 80%;
+    margin: auto;
+   
+    padding: 2rem;
+    text-align: center;
+    margin: auto;
+}
+
+/* Media queires */
+
+@media (max-width: 900px) {
+    .showcase_content  h1 {
+   
+    font-size: 40px;
+    margin: auto;
+    margin-bottom: 1rem;
+    text-align: center;
+    
+}
+}
+@media (max-width: 700px) {
+    .showcase_content  h1 {
+   
+    font-size: xx-large;
+   
+    
+}
+
+.showcase_content 
+{
+    width: 100%;
+
+}
+
+}
+

@@ -1,0 +1,84 @@
+.subscribe {
+    width: 100%;
+    background-color: var(--peach);
+}
+
+.subscribe .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 80%;
+    margin: auto;
+    padding: 1rem 0;
+    color: white;
+
+
+}
+
+.subscribe .wrapper h1 {
+    margin-top: 1.5rem;
+}
+
+
+.subscribe .wrapper div {
+    position: relative;
+
+}
+
+.subscribe .wrapper div input {
+    height: 3rem;
+    width: 300px;
+    border: none;
+    outline: none;
+    padding-left: 1rem;
+    font-family: inherit;
+    background-color: #f7f7f7;
+
+    color: #333;
+}
+
+.subscribe .wrapper div button {
+    position: absolute;
+    background: var(--darkTeal);
+    top: 1rem;
+    right: 0;
+    bottom: 0;
+
+    border: none;
+    padding: 0 1rem;
+    cursor: pointer;
+    display: grid;
+    align-items: center;
+
+}
+
+/* Media */
+
+@media (max-width: 900px) {
+    .subscribe .wrapper {
+        display: grid;
+        place-items: center;
+        place-content: center;
+      
+        /* flex-direction: column; */
+
+
+    }
+    .subscribe .wrapper div 
+    {
+          margin-top: -1rem;
+    }
+
+    .subscribe .wrapper div input {
+        width: 80vw;
+        display: grid;
+      
+    }
+
+    .subscribe .wrapper h1 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+}
