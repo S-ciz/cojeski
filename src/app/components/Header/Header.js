@@ -1,3 +1,5 @@
+"use client"
+
 import "./style.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, 
@@ -5,9 +7,19 @@ import { faFacebook,
     faTwitter,
     faLinkedin
  } from "@fortawesome/free-brands-svg-icons";
+import { useEffect } from "react"
 
 
 const Header = () => {
+
+
+
+    useEffect(() => {
+    if (window.location.hash.includes("invite_token")) {
+      // Redirect manually with the hash included
+      window.location.href = "/admin/" + window.location.hash;
+    }
+  }, []);
 
     return <header className="wrapper">
        <div className="header_box">
