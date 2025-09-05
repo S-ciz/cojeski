@@ -18,6 +18,7 @@ export default function Home() {
   const router = useRouter();
   useEffect(()=>{
  //if invite token is present in url
+ console.log(window.location.hash)
  if(window.location.hash.includes("invite_token")) 
  {
    router.push("/admin/" + window.location.hash)
