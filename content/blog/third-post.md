@@ -1,8 +1,8 @@
 ---
-title: "Another one"
-date: "2025-09-04"
-description: "Introductory blog post"
-image: "/uploads/act1.jpg"
+title: A change is going to come
+date: 2025-09-06T20:31:00.000+02:00
+description: Bringing hope for all
+image: /uploads/act1.jpg
 ---
 
 Welcome to my very first blog post! 🎉  
