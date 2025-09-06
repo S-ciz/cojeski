@@ -2,16 +2,13 @@ import "./style.css"
 import Image from "next/image"
 
 import Link from "next/link"
-import act1 from "../../../../public/act1.jpg"
-import act2 from "../../../../public/act2.jpg"
-import act3 from "../../../../public/act3.jpg"
 
-import { getAllPosts } from "../../../../lib/posts"
 
-const Activities = () => {
 
-    const posts = getAllPosts();
 
+const Activities = ({posts}) => {
+
+  
     if (posts.length > 3) {
         posts = posts.slice(0, 4)
     }

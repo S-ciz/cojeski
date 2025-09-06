@@ -1,10 +1,10 @@
 import "./style.css"
 import Link from "next/link";
-import { getAllPosts } from "../../../../lib/posts";
+import { getAllPosts } from "@/app/page";
 
-const Blogs_blogs = () => {
+const Blogs_blogs = async () => {
 
-  const posts = getAllPosts();
+  const posts = await getAllPosts();
 
 
   return <div>
@@ -25,7 +25,6 @@ const Blogs_blogs = () => {
           <button className="btn">Read more</button>
 
         </Link>
-
 
       </div>))}
 

@@ -1,3 +1,6 @@
+import fs from "fs"
+import matter from "gray-matter";
+import path from "path";
 
 //componenets
 import Header from "./components/Header/Header";
@@ -11,9 +14,29 @@ import Quote from "./components/Quote/Quote";
 import Team from "./components/Team/Team";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-export default function Home() {
 
 
+
+
+export async function getAllPosts() {
+  const postsDirectory = path.join(process.cwd(), "content/blog");
+  const fileNames = fs.readdirSync(postsDirectory);
+  return fileNames.map((fileName) => {
+    const filePath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    const { data, content } = matter(fileContents);
+    return {
+      slug: fileName.replace(/\.md$/, ""),
+      ...data,
+      content,
+    };
+  });
+}
+
+export default async function Home() {
+
+  const blogs = await getAllPosts();
+  
   return (
     <>
       <Header />
@@ -22,7 +45,7 @@ export default function Home() {
       <Subscribe/>
       <Welcome/>
       <About/>
-      <Activities/>
+      <Activities posts = {blogs} />
       <Quote/>
       <Team/>
       <Contact/>
