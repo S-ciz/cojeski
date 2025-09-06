@@ -16,22 +16,20 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 
 
+ export async function getAllPosts() {
+  const postsDir = path.join(process.cwd(), 'content/blog')
+  const files = fs.readdirSync(postsDir)
 
+  const posts = files.map(filename => {
+    const filePath = path.join(postsDir, filename)
+    const fileContent = fs.readFileSync(filePath, 'utf-8')
+    const { data } = matter(fileContent)
+    return { ...data, slug: filename.replace('.md', '') }
+  })
 
-export async function getAllPosts() {
-  const postsDirectory = path.join(process.cwd(), "content/blog");
-  const fileNames = fs.readdirSync(postsDirectory);
-  return fileNames.map((fileName) => {
-    const filePath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(filePath, "utf8");
-    const { data, content } = matter(fileContents);
-    return {
-      slug: fileName.replace(/\.md$/, ""),
-      ...data,
-      content,
-    };
-  });
+  return posts  
 }
+
 
 export default async function Home() {
 

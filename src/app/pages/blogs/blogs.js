@@ -5,13 +5,14 @@ import { getAllPosts } from "@/app/page";
 const Blogs_blogs = async () => {
 
   const posts = await getAllPosts();
-
+ 
+  console.log(posts)
 
   return <div>
 
     <h1 className="post_heading"><span className="bold">COJESKI</span>NEWS </h1>
     <div className="blogs">
-
+ 
 
       {posts.map((post, index) => (<div className="card" key={index}>
 
