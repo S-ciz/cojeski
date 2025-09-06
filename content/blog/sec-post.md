@@ -1,8 +1,8 @@
 ---
-title: "Climate Change & Environment"
-date: "2025-09-04"
-image: "/uploads/act3.jpg"
-description: "Introductory blog post"
+title: Automn for All
+date: 2025-09-06T20:30:00.000+02:00
+description: A new season to blossom
+image: https://images.pexels.com/photos/31487010/pexels-photo-31487010.jpeg
 ---
 
 Activities include environmental
