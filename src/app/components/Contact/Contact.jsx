@@ -10,8 +10,8 @@ const Contact = () => {
             </div>
 
             <section className="contact_split">
-            
-                <iframe  src="https://maps.google.com/maps?width=600&height=500&hl=en&q=democratic%20republic%20of%20Congo%2C%20bukavu&t=&z=14&ie=UTF8&iwloc=B&output=embed"></iframe>
+                <iframe loading="lazy"  src="https://www.google.com/maps/embed/v1/place?q=democratic%20republic%20of%20congo&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+              
                 <form>
 
                     <h1>Contact</h1>
