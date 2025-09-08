@@ -7,6 +7,7 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Showcase from "./components/Showcase/Showcase";
 import Subscribe from "./components/Subscribe/Subscribe";
+import Slider from "./components/Slider/Slider";
 import Welcome from "./components/Welcome/Welcome";
 import About from "./components/About/About";
 import Activities from "./components/Activities/Activities";
@@ -14,6 +15,23 @@ import Quote from "./components/Quote/Quote";
 import Team from "./components/Team/Team";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+
+
+//
+ export async function getCollection(collectionPath) {
+  const postsDir = path.join(process.cwd(), collectionPath)
+  const files = fs.readdirSync(postsDir)
+
+  const posts = files.map(filename => {
+    const filePath = path.join(postsDir, filename)
+    const fileContent = fs.readFileSync(filePath, 'utf-8')
+    const { data } = matter(fileContent)
+    return { ...data, slug: filename.replace('.md', '') }
+  })
+
+  return posts  
+}
+
 
 
  export async function getAllPosts() {
@@ -33,19 +51,21 @@ import Footer from "./components/Footer/Footer";
 
 export default async function Home() {
 
-  const blogs = await getAllPosts();
+  const blogs = await getCollection('content/blog')
+  const slides = await getCollection('content/slides')
   
   return (
     <>
       <Header />
       <Navbar />
-      <Showcase/>
-      <Subscribe/>
+      {/* <Showcase/> */}
+      {/* <Subscribe/> */}
+      <Slider slides={slides}/>
       <Welcome/>
-      <About/>
+      {/* <About/> */}
       <Activities posts = {blogs} />
       <Quote/>
-      <Team/>
+      {/* <Team/> */}
       <Contact/>
       <Footer/>
     </>

@@ -1,0 +1,38 @@
+.projects {
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+
+}
+
+.projects h1.title 
+{
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--darkTeal);
+    margin-bottom: 1rem;
+}
+
+.project_cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width:800px) {
+
+    .project_cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+
+@media (max-width:600px) {
+
+    .project_cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+}

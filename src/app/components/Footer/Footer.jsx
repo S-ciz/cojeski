@@ -3,7 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
     faFacebook,
     faInstagram,
-    faTwitter
+    faTwitter, 
+    faLinkedin,
+    faYoutube
 } from "@fortawesome/free-brands-svg-icons"
 
 
@@ -14,9 +16,11 @@ const Footer = ()=>{
             <section>
                 <h1>Social Media</h1>
                 <ul>
-                    <li> <FontAwesomeIcon width={20} icon={faFacebook}/> Facebook page</li>
-                    <li><FontAwesomeIcon width={20} icon={faInstagram}/> Instagram page</li>
-                    <li><FontAwesomeIcon width={20} icon={faTwitter}/> Twitter page</li>
+                    <li> <FontAwesomeIcon width={20} icon={faFacebook}/> Facebook </li>
+                    <li><FontAwesomeIcon width={20} icon={faInstagram}/> Instagram </li>
+                    <li><FontAwesomeIcon width={20} icon={faLinkedin}/> Linkedin </li>
+                    <li><FontAwesomeIcon width={20} icon={faYoutube}/> Youtube</li>
+                    <li><FontAwesomeIcon width={20} icon={faTwitter}/> Twitter</li>
                 </ul>
             </section>
             <section>

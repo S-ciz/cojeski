@@ -1,0 +1,27 @@
+.links_wrapper 
+{
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.links_wrapper .title 
+{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--darkTeal);
+    margin-bottom: 1rem;
+}
+
+.links 
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.fund_link 
+{
+    background-color: white;
+    margin: .5rem 0;
+    padding: 1rem;
+    color: var(--darkTeal);
+}

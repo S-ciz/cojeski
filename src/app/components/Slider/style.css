@@ -1,0 +1,14 @@
+.slide_wrapper {
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.courasel {
+    transition: all .5s ease-in-out;
+    height: 400px;
+    background-color: #3333;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

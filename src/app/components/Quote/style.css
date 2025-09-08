@@ -1,6 +1,9 @@
-.donate 
-{  position: relative;
-    width: 100%;
+.donate {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     height: 400px;
     background-image: url('../../../../public/quote.png');
     background-size: cover;
@@ -9,8 +12,7 @@
     background-repeat: no-repeat;
 }
 
-.donate_content 
-{
+.donate_content {
     position: absolute;
 
     left: 0;
@@ -26,8 +28,7 @@
 
 }
 
-.donate_content p 
-{
+.donate_content p {
     width: 50%;
     margin: 1.5rem;
     line-height: 1.4;
@@ -36,8 +37,7 @@
 
 }
 
-.donate_content .btn 
-{
+.donate_content .btn {
     background-color: var(--darkTeal);
     padding: 1rem 2rem;
     display: flex;
@@ -49,19 +49,26 @@
 }
 
 @media (max-width:900px) {
-    .donate_content p 
-{
-    width: 80%;
-   
+    .donate_content p {
+        width: 80%;
 
-}
+
+    }
 }
 
 @media (max-width:900px) {
-    .donate_content p 
-{
-    width: 90%;
-    
+    .donate_content p {
+        width: 90%;
 
-}
+
+    }
+
+    .donate {
+
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+
+
+    }
 }

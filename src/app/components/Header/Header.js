@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, 
     faInstagram,
     faTwitter,
-    faLinkedin
+    faLinkedin,
+    faYoutube
  } from "@fortawesome/free-brands-svg-icons";
 import { useEffect } from "react"
 
@@ -29,6 +30,7 @@ const Header = () => {
             <li> <FontAwesomeIcon width={20} icon={faInstagram}/></li>
             <li> <FontAwesomeIcon width={20} icon={faTwitter}/></li>
             <li> <FontAwesomeIcon width={20} icon={faLinkedin}/></li>
+            <li> <FontAwesomeIcon width={20} icon={faYoutube}/></li>
         </ul>
          </div>
     </header>

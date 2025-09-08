@@ -17,3 +17,12 @@ collections:
       - { name: "description", label: "Description", widget: "string" }
       - { name: "image", label: "Featured Image", widget: "image" }
       - { name: "body", label: "Body", widget: "markdown" }
+  - name: "slides"
+    label: "Slides"
+    folder: "content/slides"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "description", label: "Description", widget: "string" }
+      - { name: "image", label: "Featured Image", widget: "image" }

@@ -4,6 +4,7 @@ import "./style.css"
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleRight, faChevronCircleDown, faChevronCircleUp } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 
 const DropDown = ({ text, title }) => {
@@ -59,13 +60,25 @@ const Welcome = () => {
         <section id="welcome" className="welcome">
             <div>
 
-                <h1>Welcome!</h1>
-                <p>
-                    COJESKI-DRC is a <span className="bold">youth-led, decentralized civil society network</span> dedicated to promoting human rights, democracy, peace, and sustainable development across the Democratic Republic of Congo. Its work spans grassroots-level education and cultural initiatives, humanitarian relief, policy advocacy, governance reform, and regional crisis response.
-                </p>
-                <p>
-                     The North Kivu coordination, based in Goma, adapts these priorities to the specific challenges faced in that region—including conflict, displacement, and civic instability.
-                </p>
+                <h1>Publications</h1>
+                <Link className="btn_publish" href={"/pages/publish"}>Go to all Publications</Link>
+                <div className="publications">
+
+                    <Link href={"/pages/publish"} className="publish">
+                        <h5 className="bold">Title of the publish</h5>
+                       
+                     </Link>
+                    <Link href={"/pages/publish"} className="publish">
+                        <h5 className="bold">Title of the publish</h5>
+  
+                     </Link>
+                    <Link href={"/pages/publish"} className="publish">
+                        <h5 className="bold">Title of the publish </h5>
+  
+                     </Link>
+                
+                </div>
+               
 
                 <div className="dropdowns">
                    {activities.map(item=>(<DropDown key={item.id} title={item.title} text={item.text}/>))}
@@ -73,7 +86,7 @@ const Welcome = () => {
 
 
 
-                <button>READ MORE  <FontAwesomeIcon width={20} icon={faArrowAltCircleRight} /> </button>
+                <button className="button">READ MORE  <FontAwesomeIcon width={20} icon={faArrowAltCircleRight} /> </button>
             </div>
 
 

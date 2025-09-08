@@ -6,7 +6,6 @@ const Blogs_blogs = async () => {
 
   const posts = await getAllPosts();
  
-  console.log(posts)
 
   return <div>
 
