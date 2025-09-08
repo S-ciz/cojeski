@@ -4,7 +4,6 @@ nav {
    height: max-content;
 
     z-index: 500;
-
 }
 
 nav header {
@@ -79,6 +78,7 @@ ul.small_screen li {
 
 }
 
+
 ul.small_screen li:hover {
     background-color: var(--darkTeal);
 }
@@ -93,4 +93,13 @@ ul.small_screen ul li a {
     cursor: pointer;
     font-size: 2rem;
     padding-top: 1rem;
+}
+
+@media (max-width:700px) {
+  
+
+    section.logo h3 
+    {
+        display: none;
+    }
 }
