@@ -4,22 +4,30 @@ import Image from "next/image"
 import Link from "next/link"
 
 
+export function truncate(text, maxLength = 4) {
+    if (text.split(' ').length < maxLength) {
+        return text;
+    }
+    return text.split(' ').slice(0, maxLength).join(' ')
+}
 
 
-const Activities = ({posts}) => {
+const Activities = ({ posts }) => {
 
-  
+
+
+    posts = posts.reverse();
     if (posts.length > 3) {
-        posts = posts.slice(0, 4)
+        posts = posts.slice(0, 3)
     }
 
 
     const displayPosts = posts.map((post, index) => (<Link key={index} href={"/pages/blogs"} className="activity_card">
         <div className="img">
-            <Image width={200} height={200} className="image" alt="lady" src={post.image} />
+            <Image width={200} height={200} className="image" alt={index} src={post.image} />
         </div>
-        <h1 className="title">{post.title}</h1>
-        <p>{post.description}</p>
+        <h1 style={{fontSize: "1rem"}} >{truncate(post.title)}</h1>
+
     </Link>))
 
     return <div className="activity_wrapper">

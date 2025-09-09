@@ -137,13 +137,18 @@
     opacity: 1;
     padding: 0 1rem;
     height: 100px;
+    overflow: hidden;
     font-size: 1rem;
+}
+.dropdown p.drop_content::-webkit-scrollbar 
+{
+    width: 5px;
 }
 
 
 /* Media queireis */
 
-@media (max-width: 900px) {
+@media (max-width: 1400px) {
 
     .welcome {
         display: grid;
@@ -162,6 +167,8 @@
         display: grid;
         grid-template-columns: 1fr;
         width: 100%;
+        margin-bottom: 0;
+        margin-top: 0;
 
     }
 

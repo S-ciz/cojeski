@@ -1,11 +1,11 @@
 import "./style.css"
 
-const Card = () => {
+const Card = ({title ="default title", text = "default text"}) => {
 
     return <div className="about_card">
-        <h1 >Mission</h1>
+        <h1 >{title}</h1>
         <p>
-            To promote and defend—through research, advocacy, and lobbying—human dignity, good governance, democracy, and peace via active participation of empowered youth
+           {text}
         </p>
     </div>
 }

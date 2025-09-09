@@ -1,10 +1,5 @@
 import "./style.css"
-import Header from "@/app/components/Header/Header";
-import Navbar from "@/app/components/Navbar/Navbar";
-import Quote from "@/app/components/Quote/Quote";
-import Footer from "@/app/components/Footer/Footer";
 import Link from "next/link";
-
 
 
 const Fundraising = () => {
@@ -79,24 +74,16 @@ const Fundraising = () => {
 
     return <>
 
-        <Header />
-        <Navbar />
 
 
-        <div style={{width: '90vw', margin: 'auto', marginTop: '1rem', marginBottom: '1rem'}} className="links_wrapper">
+        <div className="links_wrapper">
             <h1 className="bold title">Fundraising Links</h1>
             <div className="links">
 
                 {projects.map(pro => (<Link href={pro.link} className="fund_link" key={pro.id}>{pro.title}</Link>))}
 
             </div>
-
-
         </div>
-
-
-        <Quote />
-        <Footer />
 
     </>
 }

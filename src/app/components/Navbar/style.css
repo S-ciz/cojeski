@@ -102,4 +102,13 @@ ul.small_screen ul li a {
     {
         display: none;
     }
+
+    .nav ul a {
+    font-size: 1.3rem;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+
+
+}
 }

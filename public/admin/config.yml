@@ -26,3 +26,46 @@ collections:
       - { name: "date", label: "Date", widget: "datetime" }
       - { name: "description", label: "Description", widget: "string" }
       - { name: "image", label: "Featured Image", widget: "image" }
+  - name: "about"
+    label: "About"
+    folder: "content/about"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "vision", label: "Vision", widget: "string" }
+      - { name: "mission", label: "Mission", widget: "string" }
+      - { name: "body", label: "Body", widget: "markdown" }
+  - name: "team"
+    label: "Team"
+    folder: "content/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+       - { name: "image", label: "Featured Image", widget: "image" }
+       - { name: "role", label: "Role", widget: "string" }
+  - name: "project"
+    label: "Project"
+    folder: "content/project"
+    create: true
+    slug: "{{slug}}"
+    fields:
+       - { name: "title", label: "Project title", widget: "string" }
+       - { name: "description", label: "Description", widget: "string" }
+  - name: "Activities"
+    label: "Activities"
+    folder: "content/activities"
+    create: true
+    slug: "{{slug}}"
+    fields:
+       - { name: "title", label: "Activity title", widget: "string" }
+       - { name: "description", label: "Description", widget: "string" }
+  - name: "Publications"
+    label: "Publications"
+    folder: "content/publications"
+    create: true
+    slug: "{{slug}}"
+    fields:
+       - { name: "title", label: "Activity title", widget: "string" }
+       - { name: "description", label: "Description", widget: "string" }
+
+      

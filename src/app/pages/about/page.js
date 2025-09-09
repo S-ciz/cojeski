@@ -6,9 +6,12 @@ import Navbar from "@/app/components/Navbar/Navbar";
 import Team from "@/app/components/Team/Team";
 import Quote from "@/app/components/Quote/Quote";
 import Footer from "@/app/components/Footer/Footer";
+import { getCollection } from "@/app/page";
 
+const AboutPage = async() => {
 
-const AboutPage = () => {
+    const aboutUs = await getCollection('content/about');
+    const team = await getCollection('content/team')
 
     return <>
 
@@ -21,19 +24,19 @@ const AboutPage = () => {
                 <h1 className="bold">About us</h1>
 
                 <article>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, perspiciatis nostrum libero expedita quisquam architecto neque autem distinctio provident doloremque porro asperiores laudantium deleniti nobis, sapiente, cupiditate illo molestiae quibusdam?
+                 {aboutUs[0].about}
                 </article>
             </section>
 
             <section className="about_us_img">
-
+            
             </section>
 
 
         </main>
 
-        <About />
-        <Team />
+        <About about = {aboutUs} />
+        <Team team={team} />
         <Quote />
         <Footer />
 

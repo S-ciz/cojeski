@@ -28,9 +28,9 @@ export default async function BlogPost({ params }) {
 
       <main className="single_blog" >
         <h1>{data.title}</h1>
-        <p>{data.date.toString()}</p>
+        <small>{data.date.toString().split(' ').slice(0,5).join(' ')}</small>
         {(data.image !== null && data.image.trim() !== "") && <Image width={200} height={200} className="blog_img" alt="blog_img" src={data.image} />}
-
+        <p  className="description">{data.description}</p>
       </main>
 
       <Quote/>

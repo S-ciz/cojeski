@@ -1,3 +1,4 @@
+import { getCollection } from "@/app/page";
 import "./style.css"
 import Header from "@/app/components/Header/Header";
 import Navbar from "@/app/components/Navbar/Navbar";
@@ -6,7 +7,11 @@ import Footer from "@/app/components/Footer/Footer";
 import Card from "@/app/components/Card/Card";
 
 
-const Act = () => {
+const Act = async() => {
+
+ let activities = await getCollection('/content/activities')
+
+ const displayActivities = activities.map((act, index)=> <Card key={index} text={act.description} title={act.title}/>)
 
     return <>
         <Header />
@@ -15,14 +20,9 @@ const Act = () => {
         <div className="projects">
             <h1 className="bold title">Our Activities</h1>
             <div className="project_cards">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+              {displayActivities}
             </div>
+            <br/>
 
 
         </div>

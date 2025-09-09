@@ -11,11 +11,36 @@
 
 .contact_split {
     display: flex;
+    align-items: center;
+    justify-items: center;
     column-gap: 1rem;
 }
 
-.contact_split iframe {
+.location
+{
+    padding: 1rem;
+}
+
+ul.contact_details li 
+{
+    color: var(--peach);
+
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+ul.contact_details span
+{
+    font-weight: bold;
+    color: var(--darkTeal);
+    font-size: 1.3rem;
+
+}
+
+.contact_split .map {
     flex: 2;
+    width: 90%;
+    height: 100%;
 }
 
 .contact_split form {
@@ -70,13 +95,19 @@ textarea {
 @media (max-width: 900px) {
     .contact {
         width: 100%;
-        padding: 1rem;
+      
 
     }
 
     .contact_split {
-        display: flex;
-        flex-direction: column;
+        display: grid;
         row-gap: 1rem;
     }
+
+    .contact_split form
+    {
+        width: 90vw;
+    }
+
+   
 }

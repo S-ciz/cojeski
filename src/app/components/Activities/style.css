@@ -43,6 +43,7 @@
     cursor: pointer;
 
 
+
 }
 
 .activity_card::before {
@@ -114,15 +115,29 @@
         font-size: 1.5rem;
         color: var(--darkTeal);
     }
-}
-
-
-@media (max-width: 900px) {
-    .activity_cards {
+      .activity_cards {
         display: flex;
         flex-direction: column;
         row-gap: 2rem;
     }
+       .activity_card 
+    {
+        width: 80vw;
+    }
+}
 
+
+@media (max-width: 700px) {
+  
+ .activity_wrapper {
+        padding: 0rem;
+    }
+
+    .activity {
+        width: 100%;
+        padding: 1rem;
+    }
+
+ 
    
 }

@@ -35,10 +35,10 @@
     border-radius: 1rem;
 }
 
-.image_wrapper img {
+/* .image_wrapper img {
     width: 100%;
     height: auto;
-}
+} */
 
 .member_only .image_wrapper {
     width: 100px;
@@ -50,6 +50,13 @@
     place-content: center;
 }
 
+.aside 
+{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
 .member_and_details {
     flex: 2;
     padding: 2rem;

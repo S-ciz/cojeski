@@ -1,8 +1,7 @@
 .links_wrapper 
 {
-    width: 80vw;
+    width: 100%;
     margin: auto;
-    margin-top: 3rem;
 }
 
 .links_wrapper .title 
@@ -24,4 +23,13 @@
     margin: .5rem 0;
     padding: 1rem;
     color: var(--darkTeal);
+    border: 1px solid #f7f7f7;
+    transition: all .5s ease-in-out;
+   
+}
+
+.fund_link:hover 
+{
+ transform: scale(0.97);
+ font-weight: bold;
 }

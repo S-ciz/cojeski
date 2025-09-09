@@ -5,8 +5,6 @@ import path from "path";
 //componenets
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
-import Showcase from "./components/Showcase/Showcase";
-import Subscribe from "./components/Subscribe/Subscribe";
 import Slider from "./components/Slider/Slider";
 import Welcome from "./components/Welcome/Welcome";
 import About from "./components/About/About";
@@ -53,6 +51,7 @@ export default async function Home() {
 
   const blogs = await getCollection('content/blog')
   const slides = await getCollection('content/slides')
+  const publications = await getCollection('content/publications')
   
   return (
     <>
@@ -61,7 +60,7 @@ export default async function Home() {
       {/* <Showcase/> */}
       {/* <Subscribe/> */}
       <Slider slides={slides}/>
-      <Welcome/>
+      <Welcome publications={publications}/>
       {/* <About/> */}
       <Activities posts = {blogs} />
       <Quote/>
