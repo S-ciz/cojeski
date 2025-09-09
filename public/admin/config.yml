@@ -18,25 +18,25 @@ collections:
       - { name: "image", label: "Featured Image", widget: "image" }
       - { name: "body", label: "Body", widget: "markdown" }
   - name: "slides"
-    label: "Slides"
+    label: "activities"
     folder: "content/slides"
     create: true
     slug: "{{slug}}"
     fields:
       - { name: "date", label: "Date", widget: "datetime" }
-      - { name: "description", label: "Description", widget: "string" }
+      - { name: "description", label: "Description", widget: "text" }
       - { name: "image", label: "Featured Image", widget: "image" }
   - name: "about"
-    label: "About"
+    label: "about"
     folder: "content/about"
     create: true
     slug: "{{slug}}"
     fields:
-      - { name: "vision", label: "Vision", widget: "string" }
-      - { name: "mission", label: "Mission", widget: "string" }
+      - { name: "vision", label: "Vision", widget: "text" }
+      - { name: "mission", label: "Mission", widget: "text" }
       - { name: "about", label: "About", widget: "markdown" }
   - name: "team"
-    label: "Team"
+    label: "team"
     folder: "content/team"
     create: true
     slug: "{{slug}}"
@@ -50,22 +50,22 @@ collections:
     slug: "{{slug}}"
     fields:
        - { name: "title", label: "Project title", widget: "string" }
-       - { name: "description", label: "Description", widget: "string" }
-  - name: "Activities"
-    label: "Activities"
+       - { name: "description", label: "Description", widget: "text" }
+  - name: "activities"
+    label: "activities"
     folder: "content/activities"
     create: true
     slug: "{{slug}}"
     fields:
        - { name: "title", label: "Activity title", widget: "string" }
-       - { name: "description", label: "Description", widget: "string" }
-  - name: "Publications"
-    label: "Publications"
+       - { name: "description", label: "Description", widget: "text" }
+  - name: "publications"
+    label: "publications"
     folder: "content/publications"
     create: true
     slug: "{{slug}}"
     fields:
        - { name: "title", label: "Activity title", widget: "string" }
-       - { name: "description", label: "Description", widget: "string" }
+       - { name: "description", label: "Description", widget: "text" }
 
       
