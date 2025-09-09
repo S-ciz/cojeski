@@ -31,15 +31,17 @@ collections:
     folder: "content/about"
     create: true
     slug: "{{slug}}"
+    summary: "{{fields.about}}"
     fields:
       - { name: "vision", label: "Vision", widget: "text" }
       - { name: "mission", label: "Mission", widget: "text" }
-      - { name: "about", label: "About", widget: "markdown" }
+      - { name: "about", label: "About", widget: "text" }
   - name: "team"
     label: "team"
     folder: "content/team"
     create: true
     slug: "{{slug}}"
+    summary: "{{fields.role}}"
     fields:
        - { name: "image", label: "Featured Image", widget: "image" }
        - { name: "role", label: "Role", widget: "string" }
@@ -48,6 +50,7 @@ collections:
     folder: "content/project"
     create: true
     slug: "{{slug}}"
+    summary: "{{fields.title}}"
     fields:
        - { name: "title", label: "Project title", widget: "string" }
        - { name: "description", label: "Description", widget: "text" }
@@ -56,6 +59,7 @@ collections:
     folder: "content/activities"
     create: true
     slug: "{{slug}}"
+    summary: "{{fields.title}}"
     fields:
        - { name: "title", label: "Activity title", widget: "string" }
        - { name: "description", label: "Description", widget: "text" }
@@ -64,6 +68,7 @@ collections:
     folder: "content/publications"
     create: true
     slug: "{{slug}}"
+    summary: "{{fields.title}}"
     fields:
        - { name: "title", label: "Activity title", widget: "string" }
        - { name: "description", label: "Description", widget: "text" }
