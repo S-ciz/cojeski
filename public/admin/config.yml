@@ -34,7 +34,7 @@ collections:
     fields:
       - { name: "vision", label: "Vision", widget: "string" }
       - { name: "mission", label: "Mission", widget: "string" }
-      - { name: "body", label: "Body", widget: "markdown" }
+      - { name: "about", label: "About", widget: "markdown" }
   - name: "team"
     label: "Team"
     folder: "content/team"
