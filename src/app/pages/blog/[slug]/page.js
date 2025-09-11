@@ -26,11 +26,14 @@ export default async function BlogPost({ params }) {
       <Navbar />
 
 
-      <main className="single_blog" >
-        <h1>{data.title}</h1>
-        <small>{data.date.toString().split(' ').slice(0,5).join(' ')}</small>
-        {(data.image !== null && data.image.trim() !== "") && <Image width={200} height={200} className="blog_img" alt="blog_img" src={data.image} />}
-        <p  className="description">{data.description}</p>
+
+      <main className="single-blog-container">
+        <div className="single-blog-title">{data.title}</div>
+        <div className="single-blog-date">{data.date.toString().split(' ').slice(0,5).join(' ')}</div>
+        {(data.image && data.image.trim() !== "") && (
+          <img className="single-blog-image" src={data.image} alt={data.title} />
+        )}
+        <div className="single-blog-content">{data.description}</div>
       </main>
 
       <Quote/>

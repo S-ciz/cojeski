@@ -36,7 +36,7 @@ const Welcome = ({publications}) => {
               
                  {/*  Publications */}
                 <div className="dropdowns">
-                    {publications.map(item => (<DropDown key={item.id} title={item.title} text={item.description} />))}
+                    {publications.map((item, idx) => (<DropDown key={idx} title={item.title} text={item.description} />))}
                 </div>
 
 

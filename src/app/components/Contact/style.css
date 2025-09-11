@@ -39,12 +39,13 @@ ul.contact_details span
 
 .contact_split .map {
     flex: 2;
-    width: 90%;
     height: 100%;
+    width:50%;
 }
 
 .contact_split form {
-    flex: 3;
+    width: 50%;
+    flex: 5;
     border: 1px solid #ccc;
     display: grid;
     padding: 2rem;
@@ -92,7 +93,7 @@ textarea {
     cursor: pointer;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .contact {
         width: 100%;
       

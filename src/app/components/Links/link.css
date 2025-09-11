@@ -1,0 +1,30 @@
+/* Links */
+
+.main_links {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.main_link {
+    border: 1px solid var(--darkTeal);
+    padding: 1rem;
+    color: var(--darkTeal);
+    transition: all .5s ease-in-out;
+}
+
+.main_link:hover {
+    font-weight: bold;
+    transform: scale(.9);
+
+}
+
+@media (max-width: 600px) {
+    .main_links 
+    {
+        width: 95%;
+    }
+}

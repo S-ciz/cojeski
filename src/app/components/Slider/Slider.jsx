@@ -1,58 +1,48 @@
 "use client"
 import "./style.css"
-import Image from "next/image"
-
 import { useState, useEffect, useRef } from "react"
 
 const Slider = ({ slides = [] }) => {
-
-
     const couraselRef = useRef();
-    let index = 0
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-    function changeImage() {
-
-        index++;
-        if (index > slides.length - 1) {
-           
-            index = 0;
-        } else if (index < 0) {
-            index = slides.length - 1
-          
+    function changeImage(nextIndex) {
+        let newIndex = typeof nextIndex === 'number' ? nextIndex : currentIndex + 1;
+        if (newIndex > slides.length - 1) {
+            newIndex = 0;
+        } else if (newIndex < 0) {
+            newIndex = slides.length - 1;
         }
-
-        const courasel = couraselRef.current;
-        
-        courasel.style.backgroundSize = 'cover'
-        courasel.style.backgroundPosition = 'center'
-        courasel.style.transition = 'all .5s ease-in-out'
-        courasel.style.backgroundImage = `url('${slides[index].image}')`
+        setCurrentIndex(newIndex);
     }
 
     useEffect(() => {
+        const courasel = couraselRef.current;
+        if (courasel && slides.length > 0) {
+            courasel.style.backgroundSize = 'cover';
+            courasel.style.backgroundPosition = 'center';
+            courasel.style.transition = 'background-image 0.7s ease-in-out';
+            courasel.style.backgroundImage = `url('${slides[currentIndex].image}')`;
+        }
+    }, [currentIndex, slides]);
 
-        setInterval(() => {
-
-
+    useEffect(() => {
+        if (slides.length === 0) return;
+        const interval = setInterval(() => {
             changeImage();
-
-
         }, 5000);
+        return () => clearInterval(interval);
+    }, [currentIndex, slides]);
 
-    }, [])
-
-
-    const displaySlides = slides.map((slide, index) => (<Image className="slide_img" width={500} height={500} key={index} src={slide.image} alt={slide.description} />))
-
-    return <div ref={couraselRef} className="slide_wrapper">
-
-        <div className="courasel">
-
-
-
+    return (
+        <div className="slide_wrapper">
+            <div ref={couraselRef} className="courasel" />
+            <div className="slider-controls">
+                <button onClick={() => changeImage(currentIndex - 1)}>Prev</button>
+                <button onClick={() => changeImage(currentIndex + 1)}>Next</button>
+            </div>
         </div>
-    </div>
-
+    );
 }
 
 export default Slider

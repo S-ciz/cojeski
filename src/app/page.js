@@ -7,7 +7,7 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Slider from "./components/Slider/Slider";
 import Welcome from "./components/Welcome/Welcome";
-import About from "./components/About/About";
+import Links from "./components/Links/Links";
 import Activities from "./components/Activities/Activities";
 import Quote from "./components/Quote/Quote";
 import Team from "./components/Team/Team";
@@ -59,6 +59,7 @@ export default async function Home() {
       <Navbar />
       {/* <Showcase/> */}
       {/* <Subscribe/> */}
+      <Links/>
       <Slider slides={slides}/>
       <Welcome publications={publications}/>
       {/* <About/> */}

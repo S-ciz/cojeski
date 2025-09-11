@@ -1,47 +1,46 @@
-import "./style.css"
 
-import About from "@/app/components/About/About";
-import Header from "@/app/components/Header/Header";
-import Navbar from "@/app/components/Navbar/Navbar";
-import Team from "@/app/components/Team/Team";
-import Quote from "@/app/components/Quote/Quote";
-import Footer from "@/app/components/Footer/Footer";
-import { getCollection } from "@/app/page";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import AboutUs from "../aboutUs/aboutUs";
 
-const AboutPage = async() => {
+function getMarkdownData(folder, filename) {
+    const filePath = path.join(process.cwd(), "content", folder, filename);
+    const fileContent = fs.readFileSync(filePath, "utf8");
+    const { data } = matter(fileContent);
+    return data;
+}
 
-    const aboutUs = await getCollection('content/about');
-    const team = await getCollection('content/team')
+function getAllMarkdownData(folder) {
+    const dirPath = path.join(process.cwd(), "content", folder);
+    const files = fs.readdirSync(dirPath).filter(f => f.endsWith(".md"));
+    return files.map(file => getMarkdownData(folder, file));
+}
 
-    return <>
+const AboutPage = () => {
+    // Fetch all needed data here (server-side)
 
+    const history = getMarkdownData("aboutUs/history", "history.md")
+    const structure = getMarkdownData("aboutUs/structure", "struct.md")
+    const documents = getAllMarkdownData("aboutUs/documents");
+    const reports = getAllMarkdownData("aboutUs/reports");
+    const members = getAllMarkdownData("aboutUs/members");
+    const partners = getAllMarkdownData("aboutUs/partners");
+    const donors = getAllMarkdownData("aboutUs/donors");
+    const staff = getAllMarkdownData("aboutUs/staff");
 
-        <Header />
-        <Navbar />
-
-        <main className="about_us">
-            <section className="about_content">
-                <h1 className="bold">About us</h1>
-
-                <article>
-                 {aboutUs[0].about}
-                </article>
-            </section>
-
-            <section className="about_us_img">
-            
-            </section>
-
-
-        </main>
-
-        <About about = {aboutUs} />
-        <Team team={team} />
-        <Quote />
-        <Footer />
-
-
-    </>
+    return (
+        <AboutUs
+            history={history}
+            structure={structure}
+            documents={documents}
+            reports={reports}
+            members={members}
+            partners={partners}
+            donors={donors}
+            staff={staff}
+        />
+    );
 }
 
 export default AboutPage;

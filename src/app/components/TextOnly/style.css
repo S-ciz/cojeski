@@ -1,0 +1,40 @@
+.section 
+{
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.section h1 
+{
+    color: var(--darkTeal);
+    border-bottom: 1px solid var(--darkTeal);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+.section article p 
+{
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 800px) {
+    .section 
+{
+    width: 90%;
+  
+}
+
+.section article p 
+{
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+}
