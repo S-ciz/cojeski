@@ -1,322 +1,324 @@
+backend:
+  name: git-gateway
+  branch: main
 
-  backend:
-    name: git-gateway
-    branch: main
+media_folder: "public/uploads"
+public_folder: "/uploads"
 
-  media_folder: "public/uploads"
-  public_folder: "/uploads"
+collections:
+  # BLOG
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "date", label: "Date", widget: "datetime", required: true }
+      - { name: "description", label: "Description", widget: "string", required: true }
+      - { name: "image", label: "Featured Image", widget: "image", required: true }
+      - { name: "body", label: "Body", widget: "markdown" }
 
-  collections:
-    # BLOG
-    - name: "blog"
-      label: "Blog"
-      folder: "content/blog"
-      create: true
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "date", label: "Date", widget: "datetime", required: true }
-        - { name: "description", label: "Description", widget: "string", required: true }
-        - { name: "image", label: "Featured Image", widget: "image", required: true }
-        - { name: "body", label: "Body", widget: "markdown" }
-    - name: "slides"
-      label: "slides"
-      folder: "content/slides"
-      create: true
-      slug: "{{slug}}"
-      fields:
-        - { name: "date", label: "Date", widget: "datetime" }
-        - { name: "description", label: "Description", widget: "text" }
-        - { name: "image", label: "Featured Image", widget: "image", required: true }
-    # ABOUT US
-    - name: "history"
-      label: "History"
-      folder: "content/aboutUs/history"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string" }
-        - { name: "text", label: "Content", widget: "text" }
-    - name: "structure"
-      label: "Structure"
-      folder: "content/aboutUs/structure"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Content", widget: "text", required: true }
-    - name: "documents"
-      label: "Documents"
-      folder: "content/aboutUs/documents"
-      create: true
-      slug: "{{slug}}"
-      fields:
-        - { name: "name", label: "Document Name", widget: "string", required: true }
-        - { name: "url", label: "Document URL", widget: "string", required: true }
-    - name: "reports"
-      label: "Reports"
-      folder: "content/aboutUs/reports"
-      create: true
-      slug: "{{slug}}"
-      fields:
-        - { name: "name", label: "Report Name", widget: "string", required: true }
-        - { name: "url", label: "Report URL", widget: "string", required: true }
-    - name: "members"
-      label: "Members"
-      folder: "content/aboutUs/members"
-      create: true
-      slug: "{{slug}}"
-      fields:
-        - { name: "img", label: "Image", widget: "image", required: true}
-        - { name: "personName", label: "Name", widget: "string", required: true }
-        - { name: "description", label: "Description", widget: "text", required: true }
-    - name: "partners"
-      label: "Partners"
-      folder: "content/aboutUs/partners"
-      create: true
-      slug: "{{slug}}"
-      fields:
-        - { name: "img", label: "Image", widget: "image", required: true }
-        - { name: "personName", label: "Name", widget: "string", required: true }
-        - { name: "description", label: "Description", widget: "text", required: true }
-    - name: "donors"
-      label: "Donors"
-      folder: "content/aboutUs/donors"
-      create: true
-      slug: "{{slug}}"
-      fields:
-        - { name: "img", label: "Image", widget: "image", required: true }
-        - { name: "personName", label: "Name", widget: "string", required: true }
-        - { name: "description", label: "Description", widget: "text" , required: true}
-    - name: "staff"
-      label: "Staff Members"
-      folder: "content/aboutUs/staff"
-      create: true
-      slug: "{{slug}}"
-      fields:
-        - { name: "img", label: "Image", widget: "image" , required: true}
-        - { name: "personName", label: "Name", widget: "string", required: true }
-        - { name: "description", label: "Description", widget: "text", required: true }
-    # ACTIVITIES
-    - name: "refugee"
-      label: "Refugee"
-      folder: "content/Activities/Refugee"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "idps"
-      label: "IDPs"
-      folder: "content/Activities/IDPs"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string" , required: true}
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "flood_victims"
-      label: "Flood victims"
-      folder: "content/Activities/Flood_victims"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string" , required: true}
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "stateless_people"
-      label: "Stateless people"
-      folder: "content/Activities/Stateless_people"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string" , required: true}
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "war_victims"
-      label: "War victims"
-      folder: "content/Activities/War_victims"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string" , required: true}
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "research"
-      label: "Research"
-      folder: "content/Activities/research"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string" , required: true}
-        - { name: "text", label: "Text", widget: "text", required: true }
-    # WhatWeDo subfolder collections
-    - name: "climateChange"
-      label: "Climate Change"
-      folder: "content/whatWeDo/climateChange"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "democracy"
-      label: "Democracy"
-      folder: "content/whatWeDo/democracy"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "development"
-      label: "Development"
-      folder: "content/whatWeDo/development"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "disaster"
-      label: "Disaster"
-      folder: "content/whatWeDo/disaster"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "governance"
-      label: "Governance"
-      folder: "content/whatWeDo/governance"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "humanitarian"
-      label: "Humanitarian"
-      folder: "content/whatWeDo/humanitarian"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "humanRights"
-      label: "Human Rights"
-      folder: "content/whatWeDo/humanRights"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "leadership"
-      label: "Leadership"
-      folder: "content/whatWeDo/leadership"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    # Projects subfolder collections
-    - name: "advocacy"
-      label: "Advocacy"
-      folder: "content/projects/advocacy"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "campaigns"
-      label: "Campaigns"
-      folder: "content/projects/campaigns"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "civic_education"
-      label: "Civic Education"
-      folder: "content/projects/civic_education"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "education"
-      label: "Education"
-      folder: "content/projects/education"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "health"
-      label: "Health"
-      folder: "content/projects/health"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "iga"
-      label: "IGA"
-      folder: "content/projects/iga"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "reliefAid"
-      label: "Relief Aid"
-      folder: "content/projects/reliefAid"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "research"
-      label: "Research"
-      folder: "content/projects/research"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "training"
-      label: "Training"
-      folder: "content/projects/training"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    # joinUs 
-    - name: "become_member"
-      label: "Become a Member"
-      folder: "content/joinUs/become_member"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "donor"
-      label: "Donor"
-      folder: "content/joinUs/donor"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "supporter"
-      label: "Supporter"
-      folder: "content/joinUs/supporter"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
-    - name: "volunteer"
-      label: "Volunteer"
-      folder: "content/joinUs/volunteer"
-      create: false
-      slug: "{{slug}}"
-      fields:
-        - { name: "title", label: "Title", widget: "string", required: true }
-        - { name: "text", label: "Text", widget: "text", required: true }
+  - name: "slides"
+    label: "slides"
+    folder: "content/slides"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "description", label: "Description", widget: "text" }
+      - { name: "image", label: "Featured Image", widget: "image", required: true }
+
+  # ABOUT US
+  - name: "history"
+    label: "History"
+    folder: "content/aboutUs/history"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "text", label: "Content", widget: "text" }
+
+  - name: "structure"
+    label: "Structure"
+    folder: "content/aboutUs/structure"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Content", widget: "text", required: true }
+
+  - name: "documents"
+    label: "Documents"
+    folder: "content/aboutUs/documents"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "name", label: "Document Name", widget: "string", required: true }
+      - { name: "url", label: "Document URL", widget: "string", required: true }
+
+  - name: "reports"
+    label: "Reports"
+    folder: "content/aboutUs/reports"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "name", label: "Report Name", widget: "string", required: true }
+      - { name: "url", label: "Report URL", widget: "string", required: true }
+
+  - name: "members"
+    label: "Members"
+    folder: "content/aboutUs/members"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "img", label: "Image", widget: "image", required: true }
+      - { name: "personName", label: "Name", widget: "string", required: true }
+      - { name: "description", label: "Description", widget: "text", required: true }
+
+  - name: "partners"
+    label: "Partners"
+    folder: "content/aboutUs/partners"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "img", label: "Image", widget: "image", required: true }
+      - { name: "personName", label: "Name", widget: "string", required: true }
+      - { name: "description", label: "Description", widget: "text", required: true }
+
+  - name: "donors"
+    label: "Donors"
+    folder: "content/aboutUs/donors"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "img", label: "Image", widget: "image", required: true }
+      - { name: "personName", label: "Name", widget: "string", required: true }
+      - { name: "description", label: "Description", widget: "text", required: true }
+
+  - name: "staff"
+    label: "Staff Members"
+    folder: "content/aboutUs/staff"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "img", label: "Image", widget: "image", required: true }
+      - { name: "personName", label: "Name", widget: "string", required: true }
+      - { name: "description", label: "Description", widget: "text", required: true }
+
+  # ACTIVITIES
+  - name: "refugee"
+    label: "Refugee"
+    folder: "content/Activities/Refugee"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "idps"
+    label: "IDPs"
+    folder: "content/Activities/IDPs"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "flood_victims"
+    label: "Flood victims"
+    folder: "content/Activities/Flood_victims"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "stateless_people"
+    label: "Stateless people"
+    folder: "content/Activities/Stateless_people"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "war_victims"
+    label: "War victims"
+    folder: "content/Activities/War_victims"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "research"
+    label: "Research"
+    folder: "content/Activities/research"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  # WhatWeDo subfolder collections
+  - name: "climateChange"
+    label: "Climate Change"
+    folder: "content/whatWeDo/climateChange"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "democracy"
+    label: "Democracy"
+    folder: "content/whatWeDo/democracy"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "development"
+    label: "Development"
+    folder: "content/whatWeDo/development"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "disaster"
+    label: "Disaster"
+    folder: "content/whatWeDo/disaster"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "governance"
+    label: "Governance"
+    folder: "content/whatWeDo/governance"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "humanitarian"
+    label: "Humanitarian"
+    folder: "content/whatWeDo/humanitarian"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "humanRights"
+    label: "Human Rights"
+    folder: "content/whatWeDo/humanRights"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "leadership"
+    label: "Leadership"
+    folder: "content/whatWeDo/leadership"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  # Projects subfolder collections
+  - name: "advocacy"
+    label: "Advocacy"
+    folder: "content/projects/advocacy"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "campaigns"
+    label: "Campaigns"
+    folder: "content/projects/campaigns"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "civic_education"
+    label: "Civic Education"
+    folder: "content/projects/civic_education"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "education"
+    label: "Education"
+    folder: "content/projects/education"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "health"
+    label: "Health"
+    folder: "content/projects/health"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "iga"
+    label: "IGA"
+    folder: "content/projects/iga"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "reliefAid"
+    label: "Relief Aid"
+    folder: "content/projects/reliefAid"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "research"
+    label: "Research"
+    folder: "content/projects/research"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  - name: "training"
+    label: "Training"
+    folder: "content/projects/training"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string", required: true }
+      - { name: "text", label: "Text", widget: "text", required: true }
+
+  # joinUs 
+  - name: "become_member"
+    label: "Become a Member"
     folder: "content/joinUs/become_member"
     create: false
     slug: "{{slug}}"
