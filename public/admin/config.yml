@@ -152,8 +152,8 @@ collections:
       - { name: "title", label: "Title", widget: "string", required: true }
       - { name: "text", label: "Text", widget: "text", required: true }
 
-  - name: "research"
-    label: "Research"
+  - name: "activities_research"
+    label: "Research (Activities)"
     folder: "content/Activities/research"
     create: false
     slug: "{{slug}}"
@@ -298,8 +298,8 @@ collections:
       - { name: "title", label: "Title", widget: "string", required: true }
       - { name: "text", label: "Text", widget: "text", required: true }
 
-  - name: "research"
-    label: "Research"
+  - name: "projects_research"
+    label: "Research (Projects)"
     folder: "content/projects/research"
     create: false
     slug: "{{slug}}"
